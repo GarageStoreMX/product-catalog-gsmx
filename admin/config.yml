@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway          # Netlify Identity + Git Gateway
+  branch: main               # Rama principal de tu repo (GitHub usa "main")
+
+media_folder: "media"        # Carpeta del repo donde se guardan imágenes
+public_folder: "/media"      # Ruta pública desde el navegador
+
+local_backend: true
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo"
+    label_singular: "Producto"
+    format: "json"
+    delete: true
+    editor:
+      preview: false
+
+    # Usaremos un solo archivo JSON para todos los productos
+    files:
+      - file: "data/productos.json"
+        label: "Productos"
+        name: "productos"
+        fields:
+          - label: "Productos"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.nombre}} – {{fields.categoria}} – ${{fields.precio}}"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Precio", name: "precio", widget: "number", value_type: "int", min: 0 }
+              - { label: "Categoría", name: "categoria", widget: "select",
+                  options: ["deportes", "moda", "celulares", "pantallas", "electrodomesticos", "otros"] }
+              - { label: "Descripción", name: "descripcion", widget: "text", required: false }
+
+              - label: "Imagen principal"
+                name: "imagen"
+                widget: "image"
+                allow_multiple: false
+
+              - label: "Imágenes adicionales"
+                name: "imagenes"
+                widget: "list"
+                required: false
+                field:
+                  label: "Imagen"
+                  name: "url"
+                  widget: "image"
+
+              - { label: "Link WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Link Mercado Libre", name: "mercadoLibre", widget: "string" }
