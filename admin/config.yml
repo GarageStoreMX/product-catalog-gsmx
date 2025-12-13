@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway          # Netlify Identity + Git Gateway
-  branch: main               # Rama principal de tu repo (GitHub usa "main")
+backend:
+  name: github
+  repo: GarageStoreMX/product-catalog-gsmx   # <- Tu repositorio
+  branch: main
+  auth_type: implicit
+  app_id: decap-cms
+
 
 media_folder: "media"        # Carpeta del repo donde se guardan imágenes
 public_folder: "/media"      # Ruta pública desde el navegador
