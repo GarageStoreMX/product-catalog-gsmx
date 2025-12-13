@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "nombre": "Taladro inalámbrico 20V",
+      "precio": 1899,
+      "categoria": "electrodomesticos",
+      "descripcion": "Taladro inalámbrico 20V con batería de larga duración, ideal para uso profesional y doméstico.",
+      "imagen": "https://via.placeholder.com/600x400?text=Taladro+20V+-+1",
+      "imagenes": [
+        { "url": "https://via.placeholder.com/600x400?text=Taladro+20V+-+2" },
+        { "url": "https://via.placeholder.com/600x400?text=Taladro+20V+-+3" }
+      ],
+      "whatsapp": "https://wa.me/5215555555555?text=Hola%2C%20me%20interesa%20el%20taladro%2020V",
+      "mercadoLibre": "https://www.mercadolibre.com.mx/"
+    }
+  ]
+}
